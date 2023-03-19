@@ -3,7 +3,7 @@ import { Router, ActivatedRoute } from '@angular/router';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { first } from 'rxjs/operators';
 
-import { AccountService, AlertService } from '@app/_services';
+import { AccountService} from '@app/service';
 
 @Component({ templateUrl: 'add-edit.component.html' })
 export class AddEditComponent implements OnInit {
@@ -18,7 +18,7 @@ export class AddEditComponent implements OnInit {
         private route: ActivatedRoute,
         private router: Router,
         private accountService: AccountService,
-        private alertService: AlertService
+  
     ) {}
 
     ngOnInit() {
@@ -51,8 +51,6 @@ export class AddEditComponent implements OnInit {
     onSubmit() {
         this.submitted = true;
 
-        // reset alerts on submit
-        this.alertService.clear();
 
         // stop here if form is invalid
         if (this.form.invalid) {
@@ -72,11 +70,9 @@ export class AddEditComponent implements OnInit {
             .pipe(first())
             .subscribe({
                 next: () => {
-                    this.alertService.success('User added successfully', { keepAfterRouteChange: true });
-                    this.router.navigate(['../'], { relativeTo: this.route });
+                                    this.router.navigate(['../'], { relativeTo: this.route });
                 },
                 error: error => {
-                    this.alertService.error(error);
                     this.loading = false;
                 }
             });
@@ -87,12 +83,10 @@ export class AddEditComponent implements OnInit {
             .pipe(first())
             .subscribe({
                 next: () => {
-                    this.alertService.success('Update successful', { keepAfterRouteChange: true });
-                    this.router.navigate(['../../'], { relativeTo: this.route });
+                               this.router.navigate(['../../'], { relativeTo: this.route });
                 },
                 error: error => {
-                    this.alertService.error(error);
-                    this.loading = false;
+                                      this.loading = false;
                 }
             });
     }

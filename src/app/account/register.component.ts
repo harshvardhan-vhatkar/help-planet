@@ -3,7 +3,7 @@ import { Router, ActivatedRoute } from '@angular/router';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { first } from 'rxjs/operators';
 
-import { AccountService, AlertService } from '@app/_services';
+import { AccountService } from '@app/service';
 
 @Component({ templateUrl: 'register.component.html', styleUrls: ['./register.component.css'] })
 export class RegisterComponent implements OnInit {
@@ -16,7 +16,7 @@ export class RegisterComponent implements OnInit {
         private route: ActivatedRoute,
         private router: Router,
         private accountService: AccountService,
-        private alertService: AlertService
+       
     ) { }
 
     ngOnInit() {
@@ -34,8 +34,6 @@ export class RegisterComponent implements OnInit {
     onSubmit() {
         this.submitted = true;
 
-        // reset alerts on submit
-        this.alertService.clear();
 
         // stop here if form is invalid
         if (this.form.invalid) {
@@ -47,11 +45,10 @@ export class RegisterComponent implements OnInit {
             .pipe(first())
             .subscribe({
                 next: () => {
-                    this.alertService.success('Registration successful', { keepAfterRouteChange: true });
-                    this.router.navigate(['../login'], { relativeTo: this.route });
+                                        this.router.navigate(['../login'], { relativeTo: this.route });
                 },
                 error: error => {
-                    this.alertService.error(error);
+                    
                     this.loading = false;
                 }
             });

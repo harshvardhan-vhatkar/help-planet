@@ -4,7 +4,7 @@ import { Observable, of, throwError } from 'rxjs';
 import { delay, materialize, dematerialize } from 'rxjs/operators';
 
 // array in local storage for registered users
-const usersKey = 'angular-10-registration-login-example-users';
+const usersKey = 'helpplanet';
 let users = JSON.parse(localStorage.getItem(usersKey)) || [];
 
 @Injectable()
@@ -29,12 +29,11 @@ export class FakeBackendInterceptor implements HttpInterceptor {
                 case url.match(/\/users\/\d+$/) && method === 'DELETE':
                     return deleteUser();
                 default:
-                    // pass through any requests not handled above
                     return next.handle(request);
             }    
         }
 
-        // route functions
+
 
         function authenticate() {
             const { username, password } = body;
@@ -77,12 +76,10 @@ export class FakeBackendInterceptor implements HttpInterceptor {
             let params = body;
             let user = users.find(x => x.id === idFromUrl());
 
-            // only update password if entered
             if (!params.password) {
                 delete params.password;
             }
 
-            // update and save user
             Object.assign(user, params);
             localStorage.setItem(usersKey, JSON.stringify(users));
 
@@ -97,7 +94,6 @@ export class FakeBackendInterceptor implements HttpInterceptor {
             return ok();
         }
 
-        // helper functions
 
         function ok(body?) {
             return of(new HttpResponse({ status: 200, body }))
