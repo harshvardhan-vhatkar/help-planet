@@ -1,0 +1,134 @@
+#databinding{
+    
+    color: aliceblue;
+}
+
+.main{
+  overflow-x: hidden;
+  background: #FAEAB1;
+}
+
+
+.heading{
+  margin: auto;
+  width: 50%;
+ 
+  padding: 10px;
+  text-align: center;
+}
+figure {
+  box-sizing: content-box;
+  overflow: hidden;
+  position: relative
+}
+
+
+figcaption {
+  background: rgba(0, 0, 0, .4);
+  position: absolute;
+  box-sizing: content-box;
+  padding: 17px 25px;
+  bottom: 0;
+  display: block;
+  width: 100%;
+  -webkit-transition: background-color .2s ease-in-out;
+  -moz-transition: background-color .2s ease-in-out;
+  -ms-transition: background-color .2s ease-in-out;
+  -o-transition: background-color .2s ease-in-out;
+  transition: background-color .2s ease-in-out
+}
+
+.img-cl:hover figcaption {
+  background: rgb(0, 3, 0)
+}
+
+.img-cl figcaption span {
+  color: #fff;
+  font-size: 16px;
+  font-weight: 300;
+  line-height: 16px;
+  display: block;
+  position: relative;
+  opacity: 0;
+  max-height: 0;
+  padding: 0;
+  -webkit-transition: max-height .2s ease-in-out, opacity .2s ease-in-out, padding .2s ease-in-out;
+  -moz-transition: max-height .2s ease-in-out, opacity .2s ease-in-out, padding .2s ease-in-out;
+  -ms-transition: max-height .2s ease-in-out, opacity .2s ease-in-out, padding .2s ease-in-out;
+  -o-transition: max-height .2s ease-in-out, opacity .2s ease-in-out, padding .2s ease-in-out;
+  transition: max-height .2s ease-in-out, opacity .2s ease-in-out, padding .2s ease-in-out
+}
+
+
+.img-cl:hover figcaption span {
+  max-height: 50px;
+  opacity: 1;
+  padding: 5px 0 4px
+}
+
+
+
+
+
+
+
+
+
+
+.rColor{
+  background-color: #ffda53;
+}
+
+.gColor{
+  background-color: #FAEAB1;
+}
+
+html,body{
+
+    max-width: 100%;
+      overflow-x: hidden;
+  }
+  .w-100 {
+    width: 100% !important;
+    height: 100vh;
+  }
+  .row div{padding: 0;}
+
+
+  .navbar-nav > li{
+    padding-left:30px;
+    padding-right:30px;
+  }
+
+  h3{
+    color: #fff;
+  }
+
+
+
+.tbl{
+  
+  padding-top: 30px;
+  padding-left: 80px;
+  padding-right: 80px;
+  padding-bottom: 30px;
+  border: 10px solid #ffda53;
+  
+}
+
+
+table, th, td {
+  border: 1px solid white;
+  border-collapse: collapse;
+}
+th, td {
+  background-color: #FAEAB1;
+}
+
+
+.amt{
+  margin: auto;
+  width: 50%;
+  text-align: center;
+  padding: 10px;
+}

@@ -1,7 +1,210 @@
-﻿<div class="p-4">
-    <div class="container">
-        <h1>Hi {{user.firstName}}!</h1>
-        <p>You're logged in with Angular 10!!</p>
-        <p><a routerLink="/users">Manage Users</a></p>
+﻿
+<div class="main">
+    <div id="section00">
+        <div id="carouselExampleSlidesOnly" class="carousel slide " data-bs-ride="carousel" data-bs-pause="false">
+          <div class="carousel-inner">
+            <div class="carousel-item active " data-bs-interval="3000" style=" background-color: rgba(0, 0, 0, 0.5);
+            background-blend-mode: multiply;">
+              <img src="assets/drought.jpeg"   class="d-block w-100"  style="opacity: 0.5;" alt="...">
+            </div>
+            <div class="carousel-item" data-bs-interval="3000">
+              <img src="assets/mainImg.jpg" class="d-block w-100"   style="opacity: 0.5;" alt="...">
+            </div>
+           
+          </div>
+          <div class="carousel-caption" style="
+          top: 200px;
+      
+          color: #ebe2e2;">
+            <div style="color:rgb(255, 255, 255); font-family: 'Taprom', cursive; font-size: 80px; ">
+                       Planet Earth Needs <br> Your Help</div>
+           <p style="margin-top: 40px; color:rgb(255, 255, 255);"> 
+              As we face unprecedented challenges due to global warming, it's more important than ever to understand the impact of our actions on the planet. Our mission is to provide you with the latest information and insights into the causes and effects of climate change, and to empower you with actionable steps you can take to make a positive impact.   
+          
+          </p>
+      
+                       <button type="button"  style="margin-top: 20px; border-radius: 40px;background-color: #ffffff; /* Green */
+                       border: none;
+                       color: rgb(0, 0, 0);
+                       padding: 15px 32px;
+                       text-align: center;
+                       text-decoration: none;
+                       display: inline-block;
+                       font-size: 16px;"  onClick="document.getElementById('section02').scrollIntoView();">Learn More</button>
+          </div>
+        </div> 
+      </div>
+      
+    
+      <div id="section02">
+    
+        <div class="heading">
+    <h1 style="color: #000000;  margin-top: 100px; margin-bottom: 30px; " >
+          Calamities Over the Years
+        </h1><hr style="height:3px;
+        border-width:0;
+        background-color:#000000;">
+      </div>
+        <div  style="margin-top: 30px; margin-bottom: 120px;">
+          <div class="row justify-content-center">
+            <div class="img-cl col-xs-2 col-md-auto" >
+            <figure><img  style="height:250px; width:335px" src="assets/01.jpg">
+              <figcaption>
+                <h3>Kashmir Floods</h3> <span>Continuous Rainfall</span>
+            </figcaption>
+            </figure>
+            </div>
+            <div class="img-cl col-xs-2 col-md-auto" >
+              <figure><img  style="height:250px; width:335px" src="assets/02.jpeg">
+                <figcaption>
+                  <h3>Bihar Floods</h3> <span>5 Times Normal Rainfall</span>
+              </figcaption>
+              </figure>
+              </div>
+              <div class="img-cl col-xs-2 col-md-auto" >
+                <figure><img  style="height:250px; width:335px" src="assets/03.jpg">
+                  <figcaption>
+                    <h3>Maharashtra Drought</h3> <span>Strong Heat Waves</span>
+                </figcaption>
+                </figure>
+                </div>
+                <div class="img-cl col-xs-2 col-md-auto" >
+                  <figure><img  style="height:250px; width:335px" src="assets/04.jpeg">
+                    <figcaption>
+                      <h3>Sikkim Earthquake</h3> <span>Intraplate Earthquake </span>
+                  </figcaption>
+                  </figure>
+                  </div>
+            
+          </div>
+          <div class="row justify-content-center" style="margin: auto;">
+            <div class="img-cl col-xs-2 col-md-auto" >
+              <figure><img  style="height:250px; width:335px" src="assets/05.jpg">
+                <figcaption>
+                  <h3>Turkey-Syria Earthquake</h3> <span>Death toll 45000+</span>
+              </figcaption>
+              </figure>
+              </div>
+              <div class="img-cl col-xs-2 col-md-auto" >
+                <figure><img  style="height:250px; width:335px" src="assets/06.jpeg">
+                  <figcaption>
+                    <h3>New Zealand Cyclone</h3> <span>Cyclone Gabrielle</span>
+                </figcaption>
+                </figure>
+                </div>
+                <div class="img-cl col-xs-2 col-md-auto" >
+                  <figure><img  style="height:250px; width:335px" src="assets/07.jpg">
+                    <figcaption>
+                      <h3>US Wildfires</h3> <span>Due to Extreme Drought </span>
+                  </figcaption>
+                  </figure>
+                  </div>
+                  <div class="img-cl col-xs-2 col-md-auto" >
+                    <figure><img  style="height:250px; width:335px" src="assets/08.jpg">
+                      <figcaption>
+                        <h3>Indonesia Earthquake</h3> <span>5.6 Magnitude Earthquake</span>
+                    </figcaption>
+                    </figure>
+                    </div>
+          </div>
+        </div>
+        
+        </div>
+        
+      
+      
+      <!--ngSwitch, PIPES-->
+      <div style="padding-top: 50px;  background: #ffda53; padding-bottom: 100px;" >
+          <h2 style="text-align: center">Donate to Our Cause</h2>
+          <hr style="height:1px;
+        width: 30%;
+        background-color:#000000;">
+          <h5 style="color: black; text-align: center; padding-top: 20px;">
+            all the donations made on this website goes towards recent natural disaster affected areas
+          </h5>
+          <div class="amt">
+          <p style="text-align: center; padding-top: 20px;">Enter Amount Between 10$ to 15$</p>
+              <input type="text" [(ngModel)]="nData" style="  
+              width: 50%; border-radius: 20px;"><br>
+              <div [ngSwitch]='nData' style="text-align: center;" >
+                  <div *ngSwitchCase="10"> Successfully Donated {{nData | currency: 'USD'}} at {{currDate | date}}</div>
+                  <div *ngSwitchCase="11"> Successfully Donated {{nData | currency: 'USD'}} at {{currDate | date}}</div>
+                  <div *ngSwitchCase="12"> Successfully Donated {{nData | currency: 'USD'}} at {{currDate | date}}</div>
+                  <div *ngSwitchCase="13"> Successfully Donated {{nData | currency: 'USD'}} at {{currDate | date}}</div>
+                  <div *ngSwitchCase="14"> Successfully Donated {{nData | currency: 'USD'}} at {{currDate | date}}</div>
+                  <div *ngSwitchCase="15"> Successfully Donated {{nData | currency: 'USD'}} at {{currDate | date}}</div>
+                  <div *ngSwitchDefault> Please enter amount between 10 to 15</div>
+              </div>
+          </div>
+      </div>
+<!--ngFor ngIf ngClass ngStyle  Also used Organisation as a Service -->
+<div [ngClass]="(flag==true)? 'rColor': 'gColor' ">
+  <input class="btn btn-info" (click)="dispOrg()" value="Show Similar Orgs"> &nbsp;
+  <input class="btn btn-success" (click)="hideOrg()" value="Hide Similar Orgs">
+  <br>
+  
+  <ng-container class="container " *ngIf="flag==true; then dispOrgs"></ng-container>
+  
+  <ng-template #dispOrgs><div class="tbl">
+      <table  class="rwd-table">
+          <thead [ngStyle]="{'fontSize':strFontSize + 'px' }">
+              <th>
+                  Organization Name
+              </th>
+              <th>
+                  Description
+              </th>
+          </thead>
+  
+          <tbody>
+              <tr *ngFor="let org of orgData">
+                  <td>{{org.orgName}}</td>
+                  
+                  <td>{{org.orgDescription}}</td>
+              </tr>
+          </tbody>
+      </table><br>
+      Set Font Size for this section: <input type="text" style="border-radius: 10px;" [(ngModel)]="strFontSize">
     </div>
-</div>
+  </ng-template>
+  
+  </div>
+    <!-- Footer -->
+    <footer class="bg-dark text-center text-white; ">
+      <div class="container p-4">
+        <section class="">
+            <div class="row d-flex justify-content-center">
+              <div class="col-auto">
+                <p class="pt-2" style="color: #FFF;">
+                  <strong>Sign up for our newsletter</strong>
+                </p>
+              </div>
+              <div class="col-md-5 col-12 "  style="margin-left: 10px;">
+                <div class="form-outline form-white mb-4">
+                  <input type="text" style="width: 100%;"  [(ngModel)]="mail" />
+    
+                  
+                         </div>
+              </div>
+              <div class="col-auto" style="margin-left: 10px;">
+    
+                <button type="submit" class="btn btn-outline-light mb-4">
+                  Subscribe
+                </button>
+              </div>
+    
+              <!--DATA BINDING-->
+              
+              
+            </div>
+    
+            <div id="databinding">{{mail}}</div>
+        </section>
+      </div>
+    
+    
+      <div class="text-center p-3" style="background-color: rgba(0, 0, 0, 0.2); color: #FFF;">
+        © 2023 Copyright HelpEarth
+         </div>
+    </footer>
+    </div>

@@ -1,9 +1,25 @@
 ﻿<!-- nav -->
-<nav class="navbar navbar-expand navbar-dark bg-dark" *ngIf="user">
-    <div class="navbar-nav">
-        <a class="nav-item nav-link" routerLink="/" routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}">Home</a>
-        <a class="nav-item nav-link" routerLink="/users" routerLinkActive="active">Users</a>
-        <a class="nav-item nav-link" (click)="logout()">Logout</a>
+<nav class="navbar navbar-expand-sm fixed-top navbar-light" *ngIf="user">
+    <div class="container">
+    <a class="navbar-brand" href="#section00">
+        <img src="favicon.png" width="30" height="30" alt="">
+      </a>
+   
+      <a class="navbar-brand" style="color:aliceblue" href="#section00">Help Earth</a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarScroll" aria-controls="navbarScroll" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse justify-content-end" id="navbarScroll">
+        <ul class="navbar-nav  my-2 my-lg-0 navbar-nav-scroll  " style="--bs-scroll-height: 100px;">
+            <li>
+        <a class="nav-item nav-link" routerLink="/" routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}" style="color:white">Home</a>
+            </li><li><a class="nav-item nav-link" routerLink="future" style="color:white">Future</a>
+        </li> <li><a class="nav-item nav-link" routerLink="about" style="color:white">About Us</a>
+        </li> <li><a class="nav-item nav-link" routerLink="contact" style="color:white">Contact Us</a>
+        </li> <li><a class="nav-item nav-link" (click)="logout()" style="color:white">Logout</a>
+   </li> 
+   </ul>
+    </div>
     </div>
 </nav>
 
@@ -11,14 +27,4 @@
 <div class="app-container" [ngClass]="{ 'bg-light': user }">
     <alert></alert>
     <router-outlet></router-outlet>
-</div>
-
-<!-- credits -->
-<div class="text-center mt-4">
-    <p>
-        <a href="https://jasonwatmore.com/post/2020/07/18/angular-10-user-registration-and-login-example-tutorial" target="_top">Angular 10 - User Registration and Login Example & Tutorial</a>
-    </p>
-    <p>
-        <a href="https://jasonwatmore.com" target="_top">JasonWatmore.com</a>
-    </p>
 </div>

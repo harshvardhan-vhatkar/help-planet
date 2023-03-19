@@ -1,13 +1,34 @@
 ﻿import { Component } from '@angular/core';
+import { Organisations } from '../Organisations';
+import { OrganisationsService } from '../organisations.service';
 
-import { User } from '@app/_models';
-import { AccountService } from '@app/_services';
-
-@Component({ templateUrl: 'home.component.html' })
+@Component({
+  selector: 'app-home',
+  templateUrl: './home.component.html',
+  styleUrls: ['./home.component.css']
+})
 export class HomeComponent {
-    user: User;
+  mail:string="";
 
-    constructor(private accountService: AccountService) {
-        this.user = this.accountService.userValue;
-    }
+
+
+  flag:boolean=false;
+
+  orgData: Organisations[]=[];
+
+  constructor(private organisationsService: OrganisationsService){}
+  dispOrg(){
+    this.orgData=this.organisationsService.readOrgArr();
+    this.flag=true;
+  }
+
+  hideOrg(){
+    this.flag=false;
+  }
+
+  strFontSize:string="20";
+
+  nData:number=16;
+
+  currDate:Date= new Date();
 }
