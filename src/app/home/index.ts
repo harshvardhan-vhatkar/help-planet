@@ -1,1 +1,2 @@
-﻿export * from './home.component';
+﻿//exports home component
+export * from './home.component';

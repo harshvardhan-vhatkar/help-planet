@@ -4,7 +4,7 @@ import { Routes, RouterModule } from '@angular/router';
 import { LayoutComponent } from './layout.component';
 import { LoginComponent } from './login.component';
 import { RegisterComponent } from './register.component';
-
+//routing
 const routes: Routes = [
     {
         path: '', component: LayoutComponent,

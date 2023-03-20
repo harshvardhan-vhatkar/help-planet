@@ -4,6 +4,8 @@ import { Router } from '@angular/router';
 import { AccountService } from '@app/service';
 
 @Component({ templateUrl: 'layout.component.html' })
+
+//layout
 export class LayoutComponent {
     constructor(
         private router: Router,

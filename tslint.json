@@ -1,3 +1,4 @@
+
 {
   "extends": "tslint:recommended",
   "rules": {
@@ -39,6 +40,7 @@
         "spaces"
       ]
     },
+    "//first_comment": "The first comment.",
     "max-classes-per-file": false,
     "max-line-length": [
       true,
@@ -149,4 +151,6 @@
   "rulesDirectory": [
     "codelyzer"
   ]
+  
 }
+
